@@ -1,0 +1,121 @@
+.features{
+    padding: 100px 200px 120px;
+    background-color: var(--bb-dark);
+
+    .sectionLabel{
+        max-width: 1400px;
+        margin: 0 auto 60px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        p{
+            color: var(--bb-grey);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin: 0;
+            white-space: nowrap;
+            text-align: left;
+        }
+        .line{
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+        }
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .card{
+        background-color: var(--bb-surface);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        border-radius: 16px;
+        padding: 40px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        transition: border-color 0.3s, transform 0.3s;
+        cursor: default;
+
+        &:hover{
+            border-color: rgba(209, 255, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .iconContainer{
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(209, 255, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4px;
+        }
+
+        .number{
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--bb-grey);
+            letter-spacing: 0.15em;
+            text-align: left;
+        }
+
+        .title{
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--bb-warm-white);
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .desc{
+            font-size: 15px;
+            font-weight: 300;
+            margin: 0;
+            color: rgba(245, 240, 235, 0.6);
+            line-height: 1.65;
+            text-align: justify;
+            em{
+                font-style: normal;
+                color: var(--bb-limon);
+                font-weight: 500;
+            }
+        }
+    }
+
+    .accentCard{
+        background: linear-gradient(160deg, rgba(209, 255, 0, 0.06) 0%, var(--bb-surface) 50%);
+        border-color: rgba(209, 255, 0, 0.1);
+
+        .iconContainer{
+            background: rgba(209, 255, 0, 0.12);
+        }
+        .title{
+            color: var(--bb-limon);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .features{
+        padding: 60px 24px 80px;
+        .sectionLabel{ margin-bottom: 40px; }
+        .grid{
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        .card{
+            padding: 28px 24px;
+            .title{ font-size: 20px; }
+            .desc{ font-size: 14px; }
+        }
+    }
+}

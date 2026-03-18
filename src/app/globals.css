@@ -1,0 +1,52 @@
+:root {
+  --bb-limon: #D1FF00;
+  --bb-dark: #0A0A0B;
+  --bb-surface: #141416;
+  --bb-warm-white: #F5F0EB;
+  --bb-grey: #888;
+  --bb-limon-glow: rgba(209, 255, 0, 0.12);
+  --bb-limon-strong: rgba(209, 255, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  cursor: wait;
+  background-color: var(--bb-dark);
+  color: var(--bb-warm-white);
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--bb-limon);
+  color: var(--bb-dark);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bb-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(209, 255, 0, 0.2);
+  border-radius: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  text-align: justify;
+}

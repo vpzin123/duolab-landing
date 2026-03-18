@@ -1,0 +1,178 @@
+.header{
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    top: 0;
+    color: var(--bb-warm-white);
+    padding: 35px;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 400;
+    box-sizing: border-box;
+    align-items: center;
+    font-size: 15px;
+
+    .logo{
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        p{
+            margin: 0px;
+            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+            text-align: left;
+        }
+        .copyright{
+            color: var(--bb-limon);
+            font-size: 8px;
+        }
+        .name{
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 5px;
+            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+            p{
+                position: relative;
+                transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                &:nth-of-type(2){
+                    padding-left: 0.3em;
+                    color: var(--bb-limon);
+                }
+                &:nth-of-type(3){
+                    position: absolute;
+                    left: 65px;
+                    padding-left: 0.3em;
+                }
+            }
+        }
+        &:hover{
+            .copyright{
+                transform: rotate(360deg);
+            }
+            .name{
+                padding-right: 30px;
+                .codeBy{
+                    transform: translateX(-100%);
+                }
+                .duo{
+                    transform: translateX(-25px);
+                }
+                .lab{
+                    transform: translateX(-25px);
+                }
+            }
+        }
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+
+        .el{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+            padding: 15px;
+            cursor: pointer;
+            &:hover{
+                .indicator{
+                    transform: scale(1);
+                }
+            }
+            .indicator{
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                top: 45px;
+                left: 50%;
+                background-color: var(--bb-limon);
+                border-radius: 50%;
+                transform: scale(0) translateX(-50%);
+                transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+            }
+        }
+        a{
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-geist-mono), monospace;
+            font-weight: 400;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+    }
+}
+.headerButtonContainer{
+    position: fixed;
+    right: 0px;
+    z-index: 4;
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+
+    .button{
+        position: relative;
+        margin: 20px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--bb-surface);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .burger{
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        &::after, &::before{
+            content: "";
+            display: block;
+            height: 1px;
+            width: 40%;
+            margin: auto;
+            background-color: var(--bb-warm-white);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        &::after{
+            top: -5px;
+        }
+
+        &::before{
+            top: 5px;
+        }
+    }
+
+    .burgerActive{
+        &::after{
+            transform: rotate(45deg);
+            top: -1px;
+        }
+        &::before{
+            transform: rotate(-45deg);
+            top: 0px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header{
+        padding: 20px;
+        .nav{
+            display: none;
+        }
+    }
+    .headerButtonContainer{
+        transform: scale(1) !important;
+        .button{
+            width: 60px;
+            height: 60px;
+            margin: 15px;
+        }
+    }
+}

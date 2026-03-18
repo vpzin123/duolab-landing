@@ -1,0 +1,44 @@
+'use client';
+import styles from './page.module.scss'
+import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion';
+import Preloader from '../components/Preloader';
+import Landing from '../components/Landing';
+import Description from '../components/Description';
+import SocialProof from '../components/SocialProof';
+import SlidingImages from '../components/SlidingImages';
+import Features from '../components/Features';
+import UseCases from '../components/UseCases';
+import Projects from '../components/Projects';
+import Guarantee from '../components/Guarantee';
+import Contact from '../components/Contact';
+
+export default function Home() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect( () => {
+    setTimeout( () => {
+      setIsLoading(false);
+      document.body.style.cursor = 'default'
+      window.scrollTo(0,0);
+    }, 2000)
+  }, [])
+
+  return (
+    <main className={styles.main}>
+      <AnimatePresence mode='wait'>
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+      <Landing />
+      <Description />
+      <SocialProof />
+      <SlidingImages />
+      <Features />
+      <UseCases />
+      <Projects />
+      <Guarantee />
+      <Contact />
+    </main>
+  )
+}

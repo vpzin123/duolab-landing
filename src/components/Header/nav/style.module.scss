@@ -1,0 +1,150 @@
+.menu{
+    height: 100vh;
+    background-color: var(--bb-surface);
+    position: fixed;
+    right: 0;
+    top: 0;
+    color: var(--bb-warm-white);
+    z-index: 3;
+    .body{
+        box-sizing: border-box;
+        height: 100%;
+        padding: 80px 80px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .nav{
+            display: flex;
+            flex-direction: column;
+            font-size: 48px;
+            gap: 8px;
+            margin-top: 40px;
+
+            .header{
+                color: var(--bb-grey);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                text-transform: uppercase;
+                font-size: 11px;
+                margin-bottom: 30px;
+                letter-spacing: 0.2em;
+                padding-bottom: 12px;
+                font-family: var(--font-geist-mono), monospace;
+            }
+
+            a{
+                text-decoration: none;
+                color: var(--bb-warm-white);
+                font-weight: 300;
+                transition: color 0.3s;
+                &:hover{
+                    color: var(--bb-limon);
+                }
+            }
+        }
+
+        .ctaBlock{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            .ctaButton{
+                display: inline-block;
+                text-align: center;
+                padding: 18px 40px;
+                background: var(--bb-limon);
+                color: var(--bb-dark);
+                border-radius: 100px;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                cursor: pointer;
+                transition: opacity 0.3s;
+                &:hover{ opacity: 0.85; }
+            }
+            .ctaNote{
+                margin: 0;
+                font-size: 12px;
+                color: rgba(245,240,235,0.5);
+                text-align: center;
+            }
+        }
+
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .contactInfo{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                .infoItem{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                }
+                .infoLabel{
+                    font-size: 10px;
+                    font-weight: 500;
+                    color: rgba(245,240,235,0.45);
+                    text-transform: uppercase;
+                    letter-spacing: 0.15em;
+                    font-family: var(--font-geist-mono), monospace;
+                }
+                .infoValue{
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: rgba(245,240,235,0.6);
+                }
+            }
+
+            .socials{
+                display: flex;
+                gap: 6px;
+                a{
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255,255,255,0.08);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: rgba(245,240,235,0.6);
+                    cursor: pointer;
+                    transition: all 0.25s;
+                    font-family: var(--font-geist-mono), monospace;
+                    &:hover{
+                        border-color: var(--bb-limon);
+                        color: var(--bb-limon);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .menu{
+        width: 100vw;
+        .body{
+            padding: 60px 32px 30px;
+            .nav{
+                font-size: 32px;
+                gap: 6px;
+                margin-top: 30px;
+            }
+            .ctaBlock .ctaButton{
+                padding: 14px 32px;
+                font-size: 13px;
+            }
+            .footer{
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+        }
+    }
+}

@@ -1,0 +1,167 @@
+.contact{
+    color: var(--bb-warm-white);
+    background-color: var(--bb-surface);
+
+    .body{
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 140px 80px 60px;
+    }
+
+    .ctaSection{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 100px;
+
+        .eyebrow{
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--bb-limon);
+            margin: 0;
+            font-family: var(--font-geist-mono), monospace;
+        }
+
+        .headline{
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-align: center;
+            em{
+                font-style: normal;
+                color: var(--bb-limon);
+            }
+        }
+
+        .subtext{
+            font-size: 17px;
+            font-weight: 300;
+            color: rgba(245, 240, 235, 0.6);
+            max-width: 550px;
+            line-height: 1.7;
+            margin: 0;
+            text-align: center;
+        }
+
+        .ctaRow{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .ctaPrimary{
+            display: inline-block;
+            padding: 22px 56px;
+            background: var(--bb-limon);
+            color: var(--bb-dark);
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 40px rgba(209, 255, 0, 0.15);
+            &:hover{
+                transform: translateY(-2px);
+                box-shadow: 0 0 60px rgba(209, 255, 0, 0.25);
+            }
+        }
+
+        .ctaNote{
+            font-size: 13px;
+            color: rgba(245,240,235,0.45);
+        }
+    }
+
+    .divider{
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    }
+
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 50px;
+
+        .footerLeft{
+            .brand{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 12px;
+                .brandDot{
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: var(--bb-limon);
+                }
+                .brandName{
+                    font-size: 16px;
+                    font-weight: 700;
+                    letter-spacing: 0.08em;
+                }
+            }
+            .brandSub{
+                margin: 0;
+                font-size: 13px;
+                color: rgba(245,240,235,0.45);
+                line-height: 1.6;
+                text-align: left;
+            }
+        }
+
+        .footerCenter{
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            .contactLink{
+                font-size: 14px;
+                color: rgba(245,240,235,0.6);
+                cursor: pointer;
+                transition: color 0.2s;
+                &:hover{ color: var(--bb-limon); }
+            }
+        }
+
+        .footerRight{
+            display: flex;
+            gap: 24px;
+            .social{
+                font-size: 13px;
+                color: rgba(245,240,235,0.5);
+                cursor: pointer;
+                transition: color 0.2s;
+                &:hover{ color: var(--bb-limon); }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contact .body{
+        padding: 80px 24px 40px;
+
+        .ctaSection{
+            padding-bottom: 60px;
+            .headline{ font-size: 28px; }
+            .subtext{ font-size: 15px; }
+            .ctaPrimary{ padding: 18px 36px; font-size: 14px; }
+        }
+
+        .footer{
+            flex-direction: column;
+            gap: 32px;
+            .footerRight{ flex-wrap: wrap; gap: 16px; }
+        }
+    }
+}

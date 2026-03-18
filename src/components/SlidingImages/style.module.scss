@@ -1,0 +1,85 @@
+.numbers{
+    padding: 120px 200px 80px;
+    background-color: var(--bb-dark);
+
+    .grid{
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+    }
+
+    .stat{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 40px 20px;
+        position: relative;
+
+        &:not(:last-child)::after{
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .value{
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 700;
+            color: var(--bb-limon);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .label{
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(245, 240, 235, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-align: center;
+        }
+
+        .perk{
+            margin-top: 8px;
+            padding: 8px 18px;
+            background: var(--bb-surface);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--bb-warm-white);
+            text-align: center;
+        }
+    }
+
+    .divider{
+        max-width: 1400px;
+        margin: 50px auto 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(209, 255, 0, 0.15), transparent);
+    }
+}
+
+@media (max-width: 768px) {
+    .numbers{
+        padding: 80px 24px 60px;
+        .grid{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .stat{
+            padding: 24px 12px;
+            &:nth-child(2)::after{ display: none; }
+            .value{ font-size: 40px; }
+            .label{ font-size: 11px; }
+            .perk{ font-size: 10px; padding: 6px 12px; }
+        }
+    }
+}
