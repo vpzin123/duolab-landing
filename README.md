@@ -1,6 +1,6 @@
 # VPLP - Landing Page Template
 
-Template de landing page dark premium com animacoes, copy framework Hormozi (PAS) e deploy na Vercel.
+Template de landing page dark premium com animacoes, copy otimizado para conversao e deploy na Vercel.
 
 **Demo:** [duolab-landing.vercel.app](https://duolab-landing.vercel.app)
 
@@ -155,10 +155,10 @@ npm run build
 
 ## Copy Framework
 
-O template usa o framework **PAS (Problem-Agitate-Solution)** do Alex Hormozi:
+O template usa uma estrutura de copy otimizada para conversao:
 
 1. **Hero**: Resultado em 4 linhas. Palavras-chave em destaque.
-2. **Descricao**: Problema do cliente + agitacao + hint da solucao.
+2. **Descricao**: Problema do cliente + consequencia + solucao.
 3. **Features**: Titulo = beneficio, nao funcionalidade.
 4. **Cases**: Antes/depois com numeros reais.
 5. **Garantia**: Inversao de risco. "X ou refazemos gratis."
